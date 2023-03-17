@@ -44,6 +44,7 @@ def compute_cost_matrix(X, y, w, b, verbose=False):
 def compute_gradient_matrix(X, y, w, b):
     """
     Computes the gradient for linear regression
+
     Args:
       X (ndarray (m,n)): Data, m examples with n features
       y (ndarray (m,)) : target values
@@ -52,6 +53,7 @@ def compute_gradient_matrix(X, y, w, b):
     Returns
       dj_dw (ndarray (n,1)): The gradient of the cost w.r.t. the parameters w.
       dj_db (scalar):        The gradient of the cost w.r.t. the parameter b.
+
     """
     m,n = X.shape
     f_wb = X @ w + b
@@ -107,3 +109,4 @@ def compute_gradient(X, y, w, b):
     dj_db = dj_db/m
 
     return dj_db,dj_dw
+
