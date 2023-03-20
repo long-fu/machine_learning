@@ -22,6 +22,23 @@ $f(x) = y$
 
 ## 线性回归模型
 
+
+Here is a summary of some of the notation you will encounter.  
+
+|General <img width=70/> <br />  Notation  <img width=70/> | Description<img width=350/>| Python (if applicable) |
+| ----------------------|-------------------------------------------|------|
+| $a$ | scalar, non bold                                                      ||
+| $\mathbf{a}$ | vector, bold                                                      ||
+| **Regression** |         |    |     |
+|  $\mathbf{x}$ | Training Example feature values (in this lab - Size (1000 sqft))  | `x_train` |   
+|  $\mathbf{y}$  | Training Example  targets (in this lab Price (1000s of dollars)).  | `y_train` 
+|  $x^{(i)}$, $y^{(i)}$ | $i_{th}$Training Example | `x_i`, `y_i`|
+| m | Number of training examples | `m`|
+|  $w$  |  parameter: weight,                                 | `w`    |
+|  $b$           |  parameter: bias                                           | `b`    |     
+| $f_{w,b}(x^{(i)})$ | The result of the model evaluation at $x^{(i)}$ parameterized by $w,b$: $f_{w,b}(x^{(i)}) = wx^{(i)}+b$  | `f_wb` | 
+
+
 - 回归模型
   - 线性回归模型
 
@@ -35,44 +52,52 @@ $y$ ==> output target
 
 m ==> 训练数据数量
 
-(x,y)
+(x,y) sing traning example
+
+*next*
 
 traning set == features targets
 
 learning algorithm 学习资产
 
+$x^{(i)}$, $y^{(i)}$
+
 x ==> f ==> y^
 
 feature mode prediction
+
+<!-- fw_b(x) = wx + b -->
+
+$w,b$: $f_{w,b}(x^{(i)}) = wx^{(i)}
+
+非线性回归
+
+线性回归
 
 一个变量的线性回归模型
 
 单变量线性回归模型
 
-----
+![](images/C1_W1_L3_S1_trainingdata.png)
 
-# 线性回归
+![](images/C1_W1_L3_S1_model.png)
 
-## 线性模型
-
-
+![](images/C1_W1_L3_S1_Lecture_b.png)
 
 ## 成本函数
 
-1. 为什么建立平方误差函数
+平方误差函数 常用于线性回归
 
-## 梯度下降
-
-
-为什么梯度下降会找到最小值
-
-局部最小
-
-1. 学习率
-
-- 学习率设置
+平方误差和 $$\sum\limits_{i = 0}^{m-1} (f_{w,b}(x^{(i)}) - y^{(i)})^2 \tag{1}$$
 
 
-2. 偏导数
 
-- 偏导数求解
+成本函数 $$J(w,b) = \frac{1}{2m} \sum\limits_{i = 0}^{m-1} (f_{w,b}(x^{(i)}) - y^{(i)})^2 \tag{1}$$
+
+where 
+
+  $$f_{w,b}(x^{(i)}) = wx^{(i)} + b \tag{2}$$
+
+实现:
+
+
